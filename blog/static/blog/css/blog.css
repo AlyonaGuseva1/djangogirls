@@ -1,0 +1,111 @@
+@font-face {
+    font-family: BoogalooCustom;
+    src: url(../fonts/Quicksand.ttf);
+}
+
+i {
+    color: white;
+}
+
+h4 {
+    color: white;
+    font-family: BoogalooCustom;
+}
+
+h3, h2, h1 {
+    color: white;
+    font-size: 40px;
+    font-family: BoogalooCustom;
+}
+
+.date {
+    font-family: BoogalooCustom;
+    color: white;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    color: lightblue;
+}
+
+div {
+    display: block;
+}
+
+.back {
+    width: 100%;
+    height: 100%;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 121, 84, 1) 58%, rgba(0, 212, 255, 1) 100%);
+    position: fixed;
+    top: 0;
+    z-index: -1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    min-height: calc(100vh - 80px);
+    margin-bottom: 0;
+}
+
+.content:after, .footer {
+    height: 80px;
+}
+
+.footer-link {
+    color: white;
+}
+
+.content-section {
+    background: #ffffff;
+    padding: 10px 20px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+.article-title {
+    color: #444444;
+}
+
+a.article-title:hover {
+    color: lightblue;
+    text-decoration: none;
+}
+
+.article-content {
+    white-space: pre-line;
+}
+
+.article-metadata {
+    padding-bottom: 1px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #e3e3e3
+}
+
+.content-row {
+    display: inline-block;
+    text-align: center;
+    margin: auto;
+}
+
+table {
+    color: white;
+    border-spacing: 100px;
+}
+
+td, th {
+    padding: 25px;
+}
+
+table, th, td {
+  border: 1px solid white;
+    text-align: center;
+}

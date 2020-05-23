@@ -1,0 +1,36 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+{% if enough_posts_to_analyze %}
+<a href="{% url 'blog-home' %}" class="btn btn-outline-light float-left">Back</a>
+<div class="container mt-4">
+    <span style="text-align: center; color: white; margin: auto;">
+            <h1>Advertising efficiency: </h1>
+        </span>
+    <table class="mt-4" style="margin: auto">
+        <tr>
+            <th>Hashtag name</th>
+            <th>Efficiency</th>
+        </tr>
+        {% for post in posts %}
+        <tr>
+            <td>#{{ post.title }}</td>
+            <td>{{ post.efficient_percent }} %</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+<div class="container-fluid mt-4" style="text-align: center;">
+    <a class="btn btn-outline-light mr-3 my-3" href="{% url 'pdf-download' %}" target="_blank" name="download">Download
+        PDF</a>
+    <a class="btn btn-outline-light ml-3 my-3" href="{% url 'receive-email' %}">Receive an email</a>
+</div>
+{% else %}
+<span style="text-align: center; color: white; margin: auto;" class="mt-5">
+    <h1 class="mt-4">There is not enough posts to analyze :(</h1>
+</span>
+<div class="container-fluid mt-2" style="text-align: center;">
+    <a class="btn btn-outline-light ml-3 my-3" href="{% url 'post-create' %}">Add more</a>
+</div>
+{% endif %}
+
+{% endblock content %}

@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE>
+<html>
+<head>
+    <title>Statistics</title>
+    <style type="text/css">
+        table {
+            color: black;
+            border-spacing: 15px;
+            margin: auto;
+        }
+
+        td, th {
+            padding: 10px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-4">
+    <h1 style="margin: auto; text-align: center;">Instahash - Analytics</h1>
+    <span style="text-align: center; color: black; margin: auto;">
+        <h2>Advertising efficiency: </h2>
+    </span>
+    <table class="mt-4">
+        <tr>
+            <th>Hashtag name</th>
+            <th>Efficiency</th>
+        </tr>
+        {% for post in posts %}
+        <tr>
+            <td>#{{ post.title }}</td>
+            <td>{{ post.efficient_percent }} %</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>

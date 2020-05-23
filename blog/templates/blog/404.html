@@ -1,0 +1,12 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<div style="text-align: center; color: white; margin: auto;" class="mt-5">
+    <h1>Oppps... something went wrong!</h1>
+    <p>Medias with given tag name not found :(</p>
+    {% if template_name == 'create' %}
+        <a class="btn btn-outline-light mt-3" href="{% url 'post-create' %}">Try again</a>
+    {% else %}
+        <a class="btn btn-outline-light mt-3" href="{% url 'post-update' post.id %}">Try again</a>
+    {% endif %}
+</div>
+{% endblock content %}

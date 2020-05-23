@@ -1,0 +1,30 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<a href="{% url 'blog-home' %}" class="btn btn-outline-light float-left">Back</a>
+<div class="container">
+    <div class="tag-control mb-4" style="text-align: center">
+        <h1>#{{ tag_name }}</h1>
+        <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' object.id %}">Update</a>
+        <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' object.id %}">Delete</a>
+    </div>
+    {% for media in medias %}
+    {% if media.likes_count > 1000 %}
+    <article class="media content-section">
+        <img class="rounded-circle article-img" src="{{ media.image_high_resolution_url }}" alt=""
+             style="width: 300px; height: 300px">
+        <div class="media-body ml-5">
+            <div class="article-metadata">
+                <a href={{ media.link }} target="_blank" class="btn btn-outline-dark my-3">Contact to blogger</a>
+            </div>
+            {% if media.caption %}
+                <p class="article-content">{{ media.caption|truncatechars:175 }}</p>
+            {% endif %}
+            <h4 style="color: black">{{ media.likes_count }} <i class="fa fa-heart" style="color: black"></i></h4>
+            <br/><br/>
+        </div>
+    </article>
+    {% endif %}
+    {% endfor %}
+</div>
+{% endblock %}
