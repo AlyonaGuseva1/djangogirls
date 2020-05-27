@@ -1,26 +1,27 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-<a href="{% url 'blog-home' %}" class="btn btn-outline-light float-left">Back</a>
 <div class="container">
-    <div class="tag-control mb-4" style="text-align: center">
-        <h1>#{{ tag_name }}</h1>
-        <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' object.id %}">Update</a>
-        <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' object.id %}">Delete</a>
+    <div style="text-align: center">
+        <h1 style="font-size: 80px">#{{ tag_name }}</h1>
+        <a class="shadow" href="{% url 'post-update' object.id %}"><span style="font-size: 20px" class="glyphicon glyphicon-refresh"></span></a>
+        <a class="shadow" class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' object.id %}"><span style="font-size: 20px" class="glyphicon glyphicon-trash"></span></a>
     </div>
     {% for media in medias %}
     {% if media.likes_count > 1000 %}
     <article class="media content-section">
-        <img class="rounded-circle article-img" src="{{ media.image_high_resolution_url }}" alt=""
-             style="width: 300px; height: 300px">
+        <div class="article-metadata">
+            <a href={{ media.link }} target="_blank"><img style="border-radius: 50%; width: 20%; height: 20%"src="{{media.image_high_resolution_url}}" alt=""></a>
+        </div>
         <div class="media-body ml-5">
             <div class="article-metadata">
-                <a href={{ media.link }} target="_blank" class="btn btn-outline-dark my-3">Contact to blogger</a>
+                <a style="font-size: 12px" class="head" href={{ media.link }} target="_blank">CONTACT TO BLOGGER</a>
             </div>
-            {% if media.caption %}
-                <p class="article-content">{{ media.caption|truncatechars:175 }}</p>
-            {% endif %}
-            <h4 style="color: black">{{ media.likes_count }} <i class="fa fa-heart" style="color: black"></i></h4>
+            <div class="article-metadata">
+                <p class="article-content">{{ media.caption }}</p>
+            </div>
+            <h4 style="color: black"><span style="font-size: 30px" class="glyphicon glyphicon-heart"></span> {{ media.likes_count }}</h4>
+            
             <br/><br/>
         </div>
     </article>

@@ -1,14 +1,5 @@
 from django.urls import path
-from .views import (PostListView,
-                    PostDetailView,
-                    PostCreateView,
-                    PostUpdateView,
-                    PostDeleteView,
-                    PostStatistics,
-                    page_not_found,
-                    bad_request,
-                    GeneratePDF,
-                    GetMail)
+from .views import (PostListView, PostDetailView, PostCreateView, PostUpdateView, PostDeleteView, PostStatistics, bad_request,)
 
 urlpatterns = [
     path('', PostListView.as_view(), name='blog-home'),
@@ -17,8 +8,5 @@ urlpatterns = [
     path('post/<int:pk>/update', PostUpdateView.as_view(), name='post-update'),
     path('post/<int:pk>/delete', PostDeleteView.as_view(), name='post-delete'),
     path('statistics', PostStatistics.as_view(), name='statistics'),
-    path('pdf-download', GeneratePDF.as_view(), name='pdf-download'),
-    path('get-mail', GetMail.as_view(), name='receive-email'),
-    path('404', page_not_found, name='page-not-found'),
     path('400', bad_request, name='not-efficient-tag')
 ]

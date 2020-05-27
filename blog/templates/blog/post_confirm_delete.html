@@ -3,9 +3,9 @@
 <div style="text-align: center" class="content-row mt-5">
     <form method="POST">
         {% csrf_token %}
-        <h2>Are you sure you want to delete the post "#{{ object.title }}" ?</h2>
+        <h2>Confirm delete #{{ object.title }}</h2>
         <div class="form-group">
-            <button class="btn btn-danger" type="submit">Yes, Delete</button>
+            <button class="btn btn-warning" type="submit">Delete</button>
             <a class="btn btn-secondary" href="{% url 'post-detail' object.id %}">Cancel</a>
         </div>
     </form>
