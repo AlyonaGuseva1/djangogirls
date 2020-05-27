@@ -7,7 +7,6 @@ from django.views.generic.base import View
 from igramscraper.instagram import Instagram
 from .models import Post
 
-from .utils import render_to_pdf, render_to_pdf_email
 
 instagram = Instagram()
 
@@ -17,7 +16,7 @@ class PostListView(ListView):
     template_name = 'blog/home.html'
     context_object_name = 'posts'
     ordering = ['-date_posted']
-    paginate_by = 3
+    paginate_by = 5
 
     def get_queryset(self):
         tag = super().get_queryset()
@@ -67,7 +66,7 @@ class PostCreateView(CreateView):
                     efficiency += likes_parametr
         except BaseException as e:
             print(e)
-            return render(request, 'blog/404.html', {'template_name': 'create'})
+            return render(request, 'blog/not_efficient_tag.html', {'template_name': 'create'})
         tag = Post.objects.create(title=tag_name, efficient_percent=efficiency)
         tag.save()
         return redirect('blog-home')
@@ -104,7 +103,7 @@ class PostUpdateView(UpdateView):
                     efficiency += likes_parametr
         except BaseException as e:
             print(e)
-            return render(request, 'blog/404.html', {'template_name': 'update', 'post': tag})
+            return render(request, 'blog/not_efficient_tag.html', {'template_name': 'update', 'post': tag})
         tag = Post.objects.get(id=self.get_object().id)
         tag.title = tag_name
         tag.efficient_percent = efficiency
@@ -131,51 +130,7 @@ class PostStatistics(TemplateView):
         context['posts'] = posts
         return context
 
-
-def page_not_found(request):
-    return render(request, 'blog/404.html')
-
-
 def bad_request(request):
     return render(request, 'blog/not_efficient_tag.html')
 
 
-class GetMail(TemplateView):
-    model = Post
-    template_name = 'blog/email_form.html'
-
-    def post(self, request, *args, **kwargs):
-        email = request.POST['email']
-        posts = Post.objects.all().order_by('-efficient_percent')
-        context = {
-            'posts': posts
-        }
-        pdf = render_to_pdf_email('pdf/statistics.html', context)
-        email = EmailMessage('Instahash - Analytics', 'Hello, there is your statistics.', 'emailsenders96@gmail.com',
-                             [f'{email}'])
-        email.attach('Instahash-statistics.pdf', pdf, 'blog/pdf')
-        email.send()
-        return render(request, 'blog/success.html')
-
-
-class GeneratePDF(View):
-    model = Post
-
-    def get(self, request, *args, **kwargs):
-        template = get_template('pdf/statistics.html')
-        posts = Post.objects.all().order_by('-efficient_percent')
-        context = {
-            'posts': posts
-        }
-        html = template.render(context)
-        pdf = render_to_pdf('pdf/statistics.html', context)
-        if pdf:
-            response = HttpResponse(pdf, content_type='application/pdf')
-            filename = "Instahash-statistics.pdf"
-            content = "inline; filename='%s'" % (filename)
-            download = request.GET.get("download")
-            if download:
-                content = "attachment; filename='%s'" % (filename)
-            response['Content-Disposition'] = content
-            return response
-        return HttpResponse("Not found")
