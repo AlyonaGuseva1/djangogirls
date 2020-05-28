@@ -1,12 +1,13 @@
 <h1 align="center">DJANGOGIRLS</h1>
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQZxuOfNKUWgQd6r6lkTRbAkemZEiL4qaSg_3Oqnl6yeek-G1-w&usqp=CAU" align="left">
-## Немного о проекте
 <br/><br/>
-- **Программирование на Python**
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQZxuOfNKUWgQd6r6lkTRbAkemZEiL4qaSg_3Oqnl6yeek-G1-w&usqp=CAU" align="left">
+Немного о проекте
+<br/><br/>
+- Программирование на Python
 <br/>
-- **Парсинг Instagram-постов**
+- Парсинг Instagram-постов
 <br/>
-- **Иследование эффективности хеэштегов**
+- Иследование эффективности хеэштегов
 <br/><br/>
 
 **Тема проекта**: визуальная часть - это реализация сайта-блога, аналитическая - анализ эфективности хештега. Сайт-блог создается на основе веб-фреймворка Django. Пост в этом блоге будет состоять из исследования популярности хештегов конкретного beauty-продукта. Анализ продукта происходит с помощью охвата количества лайков на публикации конкретного блогера на социальной платформе Instagram. Необходимо придерживаться структуры поста в блоге: блогер - хештег - лайки. По хештегу определенного блогера и количеству просмотров этого поста необходимо составить список эффективности рекламы.
@@ -33,7 +34,7 @@ $ python3 --version
 ```
 $ cd djangogirls
 ```
-Установи requirements командой в терминале:
+Установи requirements.txt командой в терминале:
 ```
 djangogirls user$ pip install -r requirements.txt
 ```
@@ -43,3 +44,6 @@ djangogirls user$ python3 manage.py runserver
 ```
 Перейди по адресу:
 http://127.0.0.1:8000/
+
+## Как выглядит сайт
+<br/><br/>
