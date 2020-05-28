@@ -3,7 +3,7 @@ certifi==2020.4.5.1
 chardet==3.0.4
 Django==3.0.6
 html5lib==1.0.1
-idna==2.8
+idea==2.8
 igramscraper==0.3.2
 Pillow==7.1.2
 pisa==3.0.33
