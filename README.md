@@ -23,7 +23,7 @@
 <br/><br/>
 
 <h1 align="right">Инструкция по запуску 🍬 </h1>
-<br/>
+<p>
 Установи [Python](https://www.python.org/downloads)
 Убедись, что установка прошла успешно, открыв приложение Терминал и запустив команду:
 ```
@@ -32,24 +32,35 @@ $ python3 --version
 Загрузи проект на компьютер
 <br/>
 В терминале перейди в окружение проекта (в его директорию)
+<br/>
 ```
 $ cd djangogirls
 ```
+<br/>
 Установи requirements.txt командой в терминале:
+<br/>
 ```
 djangogirls user$ pip install -r requirements.txt
 ```
+<br/>
 Запусти сервер:
+<br/>
 ```
 djangogirls user$ python3 manage.py runserver
 ```
+<br/>
 Перейди по адресу:
+<br/>
 http://127.0.0.1:8000/
-
+</p>
 <h1 align="right">Как выглядит сайт 🎉 </h1>
+<p>
+![1](1.png)
 <br/>
-![1](https://github.com/AlyonaGuseva1/djangogirls/raw/master1/1.png)
-![2](https://github.com/AlyonaGuseva1/djangogirls/raw/master1/2.png)
-![3](https://github.com/AlyonaGuseva1/djangogirls/raw/master1/3.png)
-![4](https://github.com/AlyonaGuseva1/djangogirls/raw/master1/4.png)
+![2](2.png)
 <br/>
+![3](3.png)
+<br/>
+![4](4.png)
+<br/>
+</p>
