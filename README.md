@@ -22,7 +22,7 @@
 **Тип**: web-сайт на базе фреймворка Django.
 <br/><br/>
 
-## Инструкция по запуску 🍬
+## Инструкция по запуску 🍬 
 <br/>
 Установи [Python](https://www.python.org/downloads)
 Убедись, что установка прошла успешно, открыв приложение Терминал и запустив команду:
@@ -46,12 +46,12 @@ djangogirls user$ python3 manage.py runserver
 Перейди по адресу:
 http://127.0.0.1:8000/
 
-## Как выглядит сайт 🎉
+## Как выглядит сайт 🎉 
 <br/>
-![1](https://github.com/AlyonaGuseva1/djangogirls/blob/master1/1.png)
-![2](https://github.com/AlyonaGuseva1/djangogirls/blob/master1/2.png)
-![3](https://github.com/AlyonaGuseva1/djangogirls/blob/master1/3.png)
-![4](https://github.com/AlyonaGuseva1/djangogirls/blob/master1/4.png)
+![1](https://github.com/AlyonaGuseva1/djangogirls/raw/master1/1.png)
+![2](https://github.com/AlyonaGuseva1/djangogirls/raw/master1/2.png)
+![3](https://github.com/AlyonaGuseva1/djangogirls/raw/master1/3.png)
+![4](https://github.com/AlyonaGuseva1/djangogirls/raw/master1/4.png)
 <br/><br/>
 
 <img src="https://scotch-res.cloudinary.com/image/upload/w_1050,q_auto:good,f_auto/media/1/9QmXcQ6KQTio9aAHVo7S_build-your-first-python-and-django-application.png>" align="center"
