@@ -7,7 +7,7 @@ idea==2.8
 igramscraper==0.3.2
 Pillow==7.1.2
 pisa==3.0.33
-PyPDF2==1.26.0
+PyPDF2==1.27.5
 python-slugify==3.0.2
 pytz==2020.1
 reportlab==3.5.42
